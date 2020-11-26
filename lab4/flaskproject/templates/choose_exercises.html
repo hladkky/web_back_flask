@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="box is-centered is-halfwidth">
+  <form method="POST" action="/choose_exercises">
+    {% for exer in exercises %}
+      <div class="field">
+          <label class="checkbox">
+            {% if exer in current %}
+              <input type="checkbox" name="{{ exer }}" checked>
+            {% else %}
+              <input type="checkbox" name="{{ exer }}" >
+            {% endif %}
+            {{ exer }}
+          </label>
+      </div>
+    {% endfor %}
+    <div class="columns mt-4 mgt-small is-centered">
+      <button class="button is-block is-info is-large">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

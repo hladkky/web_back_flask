@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Converter
+</h1>
+<div>
+  <form action="/converter" method="POST">
+    <div class="columns">
+      <div class="column is-half">
+        <div class="columns is-centered is-vcentered">
+          <h1>From:</h1>&nbsp;
+          <div class="select">
+            <select name="currency_from">
+              {% for cur in currencies %}
+                {% if cur == curr_curr[0] %}
+                  <option value="{{ cur }}" selected>{{ cur }}</option>
+                {% else %}
+                  <option value="{{ cur }}">{{ cur }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="columns is-centered is-vcentered">
+          <h1>To:</h1>&nbsp;
+          <div class="select">
+            <select name="currency_to">
+              {% for cur in currencies %}
+                {% if cur == curr_curr[1] %}
+                  <option value="{{ cur }}" selected>{{ cur }}</option>
+                {% else %}
+                  <option value="{{ cur }}">{{ cur }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-half">
+        <input class="input is-large" type="text" name="c_from" value="{{ values['from'] }}">
+      </div>
+      <div class="column is-half">
+        <input class="input is-large" type="text" name="c_to" value="{{ values['to'] }}" disabled>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <button class="button box is-block is-info is-large is-half-width">Convert</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

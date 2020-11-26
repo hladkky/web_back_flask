@@ -1,0 +1,11 @@
+2020-11-26 12:37:56.460 | DEBUG    | lab4.flaskproject.cconverter.currencyconverter:converter:28 - true
+2020-11-26 12:37:57.481 | DEBUG    | lab4.flaskproject.cconverter.currencyconverter:converter:28 - true
+2020-11-26 12:38:47.585 | DEBUG    | lab4.flaskproject.cconverter.currencyconverter:converter:28 - true
+2020-11-26 12:39:03.326 | DEBUG    | lab4.flaskproject.cconverter.currencyconverter:converter:28 - true
+2020-11-26 12:39:04.808 | DEBUG    | lab4.flaskproject.cconverter.currencyconverter:converter:28 - true
+2020-11-26 12:39:43.027 | DEBUG    | lab4.flaskproject.cconverter.currencyconverter:converter:28 - true
+2020-11-26 12:39:45.448 | DEBUG    | lab4.flaskproject.cconverter.currencyconverter:converter:28 - true
+2020-11-26 12:39:47.059 | DEBUG    | lab4.flaskproject.cconverter.currencyconverter:converter:28 - true
+2020-11-26T12:41:56.730052+0200 DEBUG true
+2020-11-26T12:41:59.151272+0200 DEBUG true
+2020-11-26T12:42:23.733604+0200 DEBUG true

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1 class="title is-1">
+    Welcome, {{ name }}!
+  </h1>
+  <h1 class="title is-3">
+    Your exercise for today:
+  </h1>
+  <h1 class="title is-4">
+    {{ exercise }}
+  </h1>
+  <div class="columns mt-4 mgt-small is-centered">
+    <a href="{{ url_for('DAL.choose_exercises') }}">
+      <button class="button is-block is-info is-large">
+        Manage Exercises
+      </button>
+    </a>  
+</div>
+</div>
+{% endblock %}
