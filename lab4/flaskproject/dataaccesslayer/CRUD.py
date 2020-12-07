@@ -24,9 +24,10 @@ def update_user_exercises(user_id, choosen_exercises_names):
     for exer in get_all_exercises():
         if exer.id in current_exercises and exer.id not in choosen_exercises:
             UsersExercises.query.filter(
-                UsersExercises.idU == user_id and UsersExercises.idE == exer.id
+                UsersExercises.idU == user_id
+            ).filter(
+                UsersExercises.idE == exer.id
             ).delete()
-            print('delete')
         elif exer.id not in current_exercises and exer.id in choosen_exercises:
             newUE = UsersExercises(idU=user_id, idE=exer.id)
             db.session.add(newUE)

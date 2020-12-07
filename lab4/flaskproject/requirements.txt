@@ -1,0 +1,7 @@
+bs4
+flask
+flask_caching
+flask_login
+flask_sqlalchemy
+redis
+requests

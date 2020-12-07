@@ -32,17 +32,26 @@ def converter(from_to, currencies):
 
 @currencyconverter.route('/converter', methods=['POST'])
 def converter_post():
+    currency_from = request.form.get('currency_from').split()[0]
+    currency_to = request.form.get('currency_to').split()[0]
+
     try:
         c_from = float(request.form.get('c_from'))
     except ValueError:
         c_from = 0
-    currency_from = request.form.get('currency_from').split()[0]
-    currency_to = request.form.get('currency_to').split()[0]
 
-    c_to = get_list_of_currencies_for_given_currency(currency_from)[currency_to]
+    if request.form.get('exchange'):
+        print('hello')
+        c_to = request.form.get('c_to')
+        print(c_to)
+        c_from, c_to = c_to, c_from
+        currency_from, currency_to = currency_to, currency_from
+    else:
+        c_to = round(get_list_of_currencies_for_given_currency(currency_from)[currency_to]*c_from, 3)
 
-    from_to = json.dumps({"from": c_from, "to": c_to*c_from})
+    from_to = json.dumps({"from": c_from, "to": c_to})
     currencies = json.dumps([currency_from, currency_to])
+
     return redirect(url_for('currencyconverter.converter',
                             from_to=from_to,
                             currencies=currencies))
